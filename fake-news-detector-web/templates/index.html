@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fake or Real News</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">   
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <div class="d-flex cont align-items-sm-center justify-content-center sect">
+    <div class="d-flex flex-column ">
+        <h2 class="h2">Fake News Or Real News</h2>
+        <h4 class="h4 pt-3 pt-sm-3">Type Article Below</h4>
+        <form action="{{ url_for('predict')}}"method="post">
+          <textarea name="article"  class="form-control mt-4 mt-sm-4" placeholder="Enter News Article" id="article"required></textarea>
+          <button type="submit" class="btn btn-outline-light btn-block btn-large  mt-4 mt-sm-4 px-4 py-2 px-sm-5">Predict</button>  
+        </form>
+      <br>
+      <br>
+      {{ prediction_text }}
+    </div>
+  </div>
+</body>
+</html>
